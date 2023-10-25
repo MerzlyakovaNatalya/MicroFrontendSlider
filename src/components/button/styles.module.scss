@@ -1,0 +1,23 @@
+.button {
+    width: 4rem;
+    height: 4rem;
+    background-size: 4rem;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.left {
+    background-image: url('../../assets/icons/arrow_left.svg');
+}
+
+.right {
+    background-image: url('../../assets/icons/arrow_right.svg');
+}
+
+.left.disable {
+    background-image: url('../../assets/icons/disable_left.svg');
+}
+
+.right.disable {
+    background-image: url('../../assets/icons/disable_right.svg'); 
+}
