@@ -1,3 +1,9 @@
-h1 {
-    color: red;
-  }
+html {
+  font-size: calc(100vw / 1920 * 10);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}

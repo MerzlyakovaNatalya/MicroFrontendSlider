@@ -1,0 +1,63 @@
+.card {
+    width: 30rem;
+    height: 40rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: rgba(247, 247, 250, 1);
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  
+    &_wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    &_img {
+      width: 18rem;
+      margin-top: 2rem;
+    }
+  
+    &_description {
+      height: 6rem;
+      font-family: Montserrat;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 2.4rem;
+      color: rgba(81, 80, 118, 1);
+      margin: 1rem 1rem 0 1rem;
+    }
+  
+    &_wrap_price {
+      width: 22rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 2rem 1rem 0.5rem 0;
+    }
+  
+    &_old_price {
+      margin-right: 1.7rem;
+      font-family: Montserrat;
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 2.4rem;
+      color: rgba(81, 80, 118, 0.8);
+      text-decoration: line-through solid;
+    }
+  
+    &_new_price {
+      @extend .card_old_price;
+      font-size: 1.3rem;
+      text-decoration: none;
+      margin-right: 11rem;
+    }
+  
+    &_basket {
+      width: 2rem;
+      margin-right: 10px;
+    }
+  }
