@@ -4,7 +4,8 @@ import './styles.css'
 const App = () => {
   return (
     <>
-      <Layout/>
+    <div>Проверка</div>
+      {/* <Layout/> */}
     </>
   )
 }
