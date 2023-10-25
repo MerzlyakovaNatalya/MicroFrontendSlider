@@ -1,10 +1,12 @@
+import { useState } from 'react'
 import Layout from './components/layout'
 import './styles.css'
 
 const App = () => {
+  const [ass, setAss] = useState("left")
   return (
     <>
-    <div>Проверка</div>
+    <div>{ass}</div>
       {/* <Layout/> */}
     </>
   )
