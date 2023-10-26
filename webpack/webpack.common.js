@@ -46,11 +46,13 @@ module.exports = {
       favicon: path.resolve(__dirname, '..', './public/favicon.ico'),
     }),
     new ModuleFederationPlugin({
-        name: "MicroFrontendApp",
+        name: "MicroFrontendSlider",
+        library: { type: 'var', name: 'MicroFrontendSlider' },
         filename: "remoteEntry.js", // Имя файла, в котором будут экспортированы модули
         exposes: {
-          "./UsersComponent": "./src/App", // Экспортируемые модули из вашего приложения
-        }
+          "./SliderComponent": "./src/App", // Экспортируемые модули из вашего приложения
+        },
+        shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
       })
   ],
 }

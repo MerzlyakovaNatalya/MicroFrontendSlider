@@ -6,8 +6,7 @@ const App = () => {
   const [ass, setAss] = useState("left")
   return (
     <>
-    <div>{ass}</div>
-      {/* <Layout/> */}
+       <Layout/>
     </>
   )
 }
