@@ -48,5 +48,40 @@ export interface ICard {
     description: 'Увлажняющая маска',
     price: 7520,
     oldPrice: 9400,
+}, {
+    id: 6,
+    img: jar1,
+    desc: 'для нормальной кожи',
+    description: 'Увлажняющая маска',
+    price: 3960,
+    oldPrice: 4400,
+}, {
+    id: 7,
+    img: jar3,
+    desc: 'для нормальной кожи',
+    description: 'Увлажняющий мусс',
+    price: 4750,
+    oldPrice: 5000,
+}, {
+    id: 8,
+    img: jar4,
+    desc: 'для нормальной кожи',
+    description: 'Гель для умывания',
+    price: 7520,
+    oldPrice: 9400,
+}, {
+    id: 9,
+    img: jar5,
+    desc: 'для нормальной кожи',
+    description: 'Увлажняющая маска',
+    price: 7520,
+    oldPrice: 9400,
+}, {
+    id: 10,
+    img: jar4,
+    desc: 'для нормальной кожи',
+    description: 'Гель для умывания',
+    price: 7520,
+    oldPrice: 9400,
 }
 ]
