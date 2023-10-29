@@ -5,7 +5,7 @@ import style from './styles.module.scss'
 interface IpropsButton {
   direction: string
   disable: boolean
-  click: () => number
+  click: () => void
 }
 
 const Button: React.FC<IpropsButton> = forwardRef(

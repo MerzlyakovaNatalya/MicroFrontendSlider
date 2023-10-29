@@ -1,16 +1,15 @@
-import React from 'react'
-import basket from '../../../assets/icons/basket.svg'
+import React, { forwardRef } from 'react'
+import { motion } from 'framer-motion'
 import { ICard } from '../../../helps'
+import basket from '../../../assets/icons/basket.svg'
 import style from './styles.module.scss'
 
-const Card: React.FC<ICard> = ({
-  img,
-  description,
-  price,
-  oldPrice,
-}) => {
+const Card: React.FC<ICard> = forwardRef((
+  { img, description, price, oldPrice },
+  ref: React.Ref<HTMLDivElement>
+) => {
   return (
-    <div className={style.card}>
+    <div className={style.card} ref={ref}>
       <div className={style.card_wrap}>
         <img src={img} className={style.card_img} alt="Фото товара" />
         <p className={style.card_description}>{description}</p>
@@ -22,6 +21,7 @@ const Card: React.FC<ICard> = ({
       </div>
     </div>
   )
-}
+})
 
-export default Card
+const MCard = motion(Card)
+export default MCard

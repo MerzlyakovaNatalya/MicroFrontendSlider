@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MButton from '../button'
 import Slider from '../slider'
+import { cards, ICard } from '../../helps'
+import { requestCards, baseQuery } from '../../api.tsx'
 import { motion } from 'framer-motion'
 import img from '../../assets/images/dandelion.png'
 import style from './styles.module.scss'
@@ -18,17 +20,33 @@ const buttonAnimation = {
 }
 
 const Layout: React.FC = () => {
-  const [activeButton, setActiveButton] = useState(1)
+  const [disableButton, setDisableButton] = useState(0)
+  const [pagination, setPagination] = useState(baseQuery)
+  const [filteredСards, setFilteredСards] = useState<ICard[]>([])
 
   const setPrev = () => {
-    if (activeButton > 1) setActiveButton(activeButton - 1)
-    return activeButton
+    if (disableButton > 1) setDisableButton(disableButton - 3)
+    setPagination((prev) => ({
+    ...prev,
+    offset: Math.max(prev.offset - prev.limit, 0)
+  }))
   }
 
   const setNext = () => {
-    if (activeButton < 5) setActiveButton(activeButton + 1)
-    return activeButton
+    if (disableButton < 9) setDisableButton(disableButton + 3)
+    if (disableButton === 9) return
+    setPagination((prev) => ({
+      ...prev,
+      offset: prev.offset + prev.limit
+    }))
   }
+
+  useEffect(() => {
+    const query = async () => {
+    const queryCards = await requestCards(pagination)
+    setFilteredСards(queryCards)}
+    query()
+  }, [pagination])
 
   return (
     <div className={style.layout}>
@@ -44,18 +62,18 @@ const Layout: React.FC = () => {
           variants={buttonAnimation}
           custom={1}
           direction="left"
-          disable={activeButton === 1}
+          disable={disableButton === 0}
           click={setPrev}
         />
         <MButton
           variants={buttonAnimation}
           custom={2}
           direction="right"
-          disable={activeButton === 5}
+          disable={disableButton === 9}
           click={setNext}
         />
       </motion.div>
-      <Slider />
+      <Slider cards={filteredСards}/>
     </div>
   )
 }
