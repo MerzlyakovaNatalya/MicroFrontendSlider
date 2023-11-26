@@ -38,6 +38,7 @@ module.exports = {
     //созданные бандлы будут сохранены в каталоге ./build и будут названы bundle.js
     path: path.resolve(__dirname, '..', './build'),
     filename: 'bundle.js',
+    publicPath: 'auto',
   },
   plugins: [
     // массив содержит список плагинов, которые используются в процессе сборки
